@@ -1,5 +1,9 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -28,28 +32,11 @@ textarea {
   margin: 10px;
 }
 
-nav {
-  background: #515f7d;
-  color: white;
-  padding: 0px 20px;
-  box-shadow: 0px 1px 2px gray;
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 5px;
-}
-
-nav li {
-  list-style: none;
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-}
-
 .card {
-  width: 400px;
+  width: 250px;
   padding: 10px;
   box-shadow: 0px 2px 3px grey;
-  margin: 0 auto;
+  margin: 1%;
   margin-bottom: 20px;
   background: #94a7c8;
   border-radius: 4px;
@@ -106,4 +93,179 @@ nav li {
 
 .TaskCard {
   background-color: #dfeef9;
+}
+
+.navbar {
+  height:60px;
+  box-shadow: 0px 0px 2px white;
+}
+
+.navbar p, .navbar a{
+  color:white;
+  text-decoration:none;
+}
+
+.navbar-left{
+  display:flex;
+  flex-direction:row;
+  justify-content:left;
+  align-items:center;
+}
+
+.navbar-right{
+  display:flex;
+  flex-direction:row;
+  justify-content:right;
+}
+
+.title-menu{
+  margin: 10% 0 10% 0;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.cards-title-menu{
+  margin: 1% 0 0 0;
+  display:flex;
+  justify-content:center;
+}
+
+.icon{
+  position:relative;
+  width:35px;
+  top:-7px;
+  margin-right:10%;
+}
+
+.overlay {
+  background: url('./images/overlay.png');
+  position: absolute;
+  width: 100%;
+  height: 135%;
+  z-index: -1;
+  background-repeat: repeat;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  filter:grayscale(100%);
+}
+
+h1 {
+  position: relative;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: calc(5px + 5vw);
+  font-weight: 700;
+  color: #f5f5f5;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  perspective: 500px;
+}
+
+h1::before,
+h1::after {
+  content: attr(aria-label);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.3);
+}
+
+h1::before {
+  animation: floatAbove 4s ease-in-out infinite;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+h1::after {
+  opacity: 0.65;
+  filter: blur(0.02em);
+  transform: translate(-50%, -50%) rotateX(21deg);
+  animation: floatBelow 4s ease-in-out infinite;
+  -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@keyframes floatAbove {
+  50% {
+      transform: translate(-50%, -60%);
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+              clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+  }
+}
+
+@keyframes floatBelow {
+  50% {
+      transform: translate(-50%, -60%) rotateX(10deg);
+      -webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+              clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+  }
+}
+
+.smap .zoom .button-group {
+  left:-30px;
+  display:flex;
+  flex-direction:row;
+  position:absolute;
+}
+
+.compass-north {
+  position:absolute;
+  margin-right:12px;
+}
+
+.card-header a {
+  text-decoration:none;
+  font-weight: bold;
+}
+
+.my-location {
+  color:white;
+  display:flex;
+  font-size:10px;
+  flex-direction:row;
+  position:absolute;
+  z-index:100;
+  height:18px;
+  border-radius:0px 0px 10px 0px;
+  background-color: rgba(0,0,0,0.5);
+  padding:1px 8px 1px 5px;
+}
+
+.legend {
+  width:96px;
+  height:80px;
+  position:absolute;
+  top:140px;
+  right:6px;
+  background-color:white;
+  z-index:1000;
+  color:black;
+  font-size:12px;
+  border-radius:10px;
+  border:1px solid silver;
+  box-shadow: 0px 0px 1px silver;
+  font-weight:bold;
+  padding:2px;
+}
+
+.card-header, .card-footer{
+  border:0;
+  background-color:white;
+}
+
+.dropdown-menu {
+  left: auto !important;
+  z-index:2000;
 }

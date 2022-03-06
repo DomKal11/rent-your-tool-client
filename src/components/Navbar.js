@@ -2,15 +2,18 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";                     // <== IMPORT 
 import { AuthContext } from "../context/auth.context"; 
 
+
 function Navbar() {
 
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
-    <nav>
-      <Link to="/">
-        <button>Home</button>
+    <nav className="navbar navbar-dark bg-dark">
+    <div className="container">
+      <Link to="/" className="navbar-left">
+        <img src="/icon.png" alt="icon" className="icon"></img>
+        <p className="navbar-brand">Rent your tools</p>
       </Link>
- 
+      <div className="navbar-right">
       {/*    UPDATE     */}
       {isLoggedIn && (
         <>
@@ -24,10 +27,13 @@ function Navbar() {
  
       {!isLoggedIn && (
         <>
-          <Link to="/signup"> <button>Sign Up</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
+        <Link to="/tools"> <p className="nav-item">Tools</p> </Link>
+          <Link to="/signup"> <p className="nav-item">Sign Up</p> </Link>
+          <Link to="/login"> <p className="nav-item">Login</p> </Link>
         </>
       )}
+      </div>
+      </div>
     </nav>
   );
 }
