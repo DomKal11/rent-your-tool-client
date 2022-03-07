@@ -51,7 +51,6 @@ function Tools() {
   useEffect(() => {
     getLocation();
     getAllTools();
-    console.log(tools);
   }, []);
 
   return (
@@ -77,9 +76,9 @@ function Tools() {
             <Marker key={index}
               coords={{ lat: tool.location[0], lng: tool.location[1] }}
               card={{
-                header: `<a href="${tool._id}">${tool.name}</a>`,
+                header: `<a href="tool/${tool._id}">${tool.name}</a>`,
                 body: `<img src='${tool.image}'/><p>${tool.details}</p>`,
-                footer: `<a href="${tool._id}"><p>Book for ${tool.price}€/day</p></a>`,
+                footer: `<a href="tool/${tool._id}"><p>Book for ${tool.price}€/day</p></a>`,
                 options: {
                   width: 300,
                   height: 300,

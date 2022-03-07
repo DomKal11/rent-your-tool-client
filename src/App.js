@@ -3,6 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import Tools from "./pages/Tools";
+import ToolDetail from "./pages/ToolDetail";
+import MyTools from "./pages/MyTools";
+import AddTool from "./pages/AddTool";
 import ProjectListPage from "./pages/ProjectListPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import EditProjectPage from "./pages/EditProjectPage";
@@ -24,6 +27,22 @@ function App() {
           path="/tools"
           element={ <Tools /> } 
         />
+
+        <Route
+          path="/tool/:id"
+          element={ <IsPrivate> <ToolDetail /> </IsPrivate> } 
+        />
+
+        <Route
+          path="/add-tool"
+          element={ <IsPrivate> <AddTool /> </IsPrivate> } 
+        />
+
+        <Route
+          path="/my-tools"
+          element={ <IsPrivate> <MyTools /> </IsPrivate> } 
+        />
+
 
         <Route
           path="/projects"
