@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import service from "../api/service";
 
 const API_URL = "http://localhost:5005";
 
@@ -20,24 +19,25 @@ function AddTool(props) {
   const navigate = useNavigate();
   const location = [lat, lng];
 
- // ******** this method handles the file upload ********
- const handleFileUpload = (e) => {
+  // ******** this method handles the file upload ********
+  const handleFileUpload = (e) => {
     // console.log("The file to be uploaded is: ", e.target.files[0]);
- 
+
     const uploadData = new FormData();
- 
+
     // imageUrl => this name has to be the same as in the model since we pass
     // req.body to .create() method when creating a new movie in '/api/movies' POST route
     uploadData.append("imageUrl", e.target.files[0]);
- 
-    service
-      .uploadImage(uploadData)
-      .then(response => {
+
+    axios
+      .post(`${API_URL}/api/upload`, uploadData)
+      .then((response) => {
         console.log("response is: ", response);
         // response carries "fileUrl" which we can use to update the state
-        setImageUrl(response.fileUrl);
+        setImageUrl(response.data.fileUrl);
+        console.log(response.data.fileUrl);
       })
-      .catch(err => console.log("Error while uploading the file: ", err));
+      .catch((err) => console.log("Error while uploading the file: ", err));
   };
 
   const handleSubmit = (e) => {
@@ -64,7 +64,13 @@ function AddTool(props) {
         // Reset the state
         setName("");
         setDetails("");
+        setPrice(0);
+        setCity("");
+        setGps("");
+        setLat("");
+        setLng("")
         setImageUrl("");
+        navigate("/tools/");
       })
       .catch((error) => console.log(error));
   };
@@ -139,10 +145,14 @@ function AddTool(props) {
           onChange={(e) => setLng(e.target.value)}
         />
 
-<input type="file" onChange={(e) => handleFileUpload(e)} />
-     
+        <input type="file" onChange={(e) => handleFileUpload(e)} />
 
-        <button type="submit">Submit</button>
+        {imageUrl !== "" && <button type="submit">Submit</button>}
+        {imageUrl === "" && (
+          <button disabled type="submit" title="Please fill in the form!">
+            Submit
+          </button>
+        )}
       </form>
     </div>
   );

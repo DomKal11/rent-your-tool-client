@@ -26,14 +26,14 @@ function ProjectListPage() {
 
   
   return (
-    <div className="ProjectListPage">
-      
+    <div className="container">
+      <div className="row d-flex justify-content-center">
       { tools.map((tool, i) => {
           if(tool.owner._id === user._id){
             return (<ToolCard key={i} {...tool} />);
           }
           })} 
-       
+          </div>
     </div>
   );
 }

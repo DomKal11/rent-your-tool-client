@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 
 // We are deconstructing props object directly in the parentheses of the function
-function ToolCard ( { name, details, _id } ) {
+function ToolCard ( { name, details, imageUrl, _id } ) {
   
   return (
-    <div className="ProjectCard card">
+    <div className="card">
+    <div className="card-img-container"><img className="card-img-top" src={imageUrl} alt={name}></img></div>
+    <div class="card-body">
       <Link to={`/tool/${_id}`}>
         <h3>{name}</h3>
-        <p>{details}</p>
       </Link>
       <p style={{ maxWidth: "400px" }}>{details} </p>
+      </div>
     </div>
   );
 }

@@ -42,7 +42,16 @@ textarea {
   border-radius: 4px;
 }
 
-.ProjectCard h3::after {
+.card-img-top {
+  width: 228px;
+  height:165px;
+  vertical-align:middle;
+  object-fit:cover;
+  box-shadow: 0px 0px 2px silver;
+  border-radius:3px;
+}
+
+.ProjectCard h3::before {
   content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
   margin-left: 5px;
 }
@@ -230,6 +239,12 @@ h1::after {
   font-weight: bold;
 }
 
+.tool-img-map {
+  margin:0 auto;
+  border:1px solid silver;
+  box-shadow: 0px 0px 2px gray;
+}
+
 .my-location {
   color:white;
   display:flex;
@@ -260,12 +275,56 @@ h1::after {
   padding:2px;
 }
 
-.card-header, .card-footer{
+.card-status {
+  position:absolute;
+  font-weight:bold;
+  width:150px;
+  top:20px;
+  left:-40px;
+  transform: rotate(-45deg);
+}
+
+.available {
+  background-color:rgb(0, 255, 42);
+}
+
+.rented {
+  background-color:rgb(255, 0, 0);
+}
+
+.card-details {
+  font-size:14px;
+  text-align: justify;
+}
+
+.card-header {
   border:0;
   background-color:white;
+  border-bottom: 1px solid silver;
+  border-radius:5px;
+}
+
+.card-footer{
+  border:0;
+  background-color:white;
+  border-top: 1px solid silver;
 }
 
 .dropdown-menu {
   left: auto !important;
   z-index:2000;
+}
+
+.tool-picture {
+  max-width: 60%;
+  border-radius:10px;
+  border:1px solid silver;
+}
+
+.tool-box{
+  margin:0 auto;
+  padding:3% 1% 1% 1%;
+  width:100%;
+  background-color:silver;
+  border-radius:3%;
 }

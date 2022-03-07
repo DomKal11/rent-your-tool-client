@@ -10,6 +10,7 @@ import {
   MarkerLayer,
   Marker,
 } from "react-mapycz";
+import "../index.css";
 
 const API_URL = "http://localhost:5005";
 
@@ -77,11 +78,11 @@ function Tools() {
               coords={{ lat: tool.location[0], lng: tool.location[1] }}
               card={{
                 header: `<a href="tool/${tool._id}">${tool.name}</a>`,
-                body: `<img src='${tool.image}'/><p>${tool.details}</p>`,
+                body: `<p class="card-status ${tool.status}">${tool.status}</p><img class="tool-img-map" style="width:230px" src='${tool.imageUrl}'/><p class="card-details">${tool.details}</p>`,
                 footer: `<a href="tool/${tool._id}"><p>Book for ${tool.price}€/day</p></a>`,
                 options: {
                   width: 300,
-                  height: 300,
+                  height: 400,
                 },
               }}
             />
