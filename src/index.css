@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    display:none;
+  }
+}
+
 html, body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -42,6 +48,7 @@ textarea {
 }
 
 .card-img-top {
+  margin-top:5px;
   width: 228px;
   height:165px;
   vertical-align:middle;
@@ -121,6 +128,7 @@ textarea {
 }
 
 .navbar-right{
+  margin-top:-12px;
   display:flex;
   flex-direction:row;
   justify-content:right;
@@ -488,7 +496,7 @@ h1::after {
   position: relative;
   max-width: 350px;
   height: auto;
-  margin: 10px 20px;
+  margin: 2px 20px;
   padding: 5px;
   background-color: #ffffff;
   border-radius: 3px;
@@ -503,3 +511,15 @@ h1::after {
   line-height: 1.5;
   color: #797979;
 }
+
+.profilepic-comment {
+  width:50px;
+}
+
+.profilepic-name {
+  width:50px;
+  font-size: 10px;
+  font-weight:bold;
+  letter-spacing:-1px;
+}
+

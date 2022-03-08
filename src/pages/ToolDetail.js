@@ -131,6 +131,10 @@ function ToolDetail(props) {
       .catch((error) => console.log(error));
   };
 
+  const deleteComment = (e) => {
+     console.log(id);
+  };
+
   return (
     <div className="container">
       <div className="tool-box card">
@@ -276,7 +280,7 @@ function ToolDetail(props) {
         {comments && (
           <>
             {comments.map((comment, i) => {
-              return (<Comment key={i} {...comment} />);
+              return (<Comment key={i} {...comment} userId={user._id} delete={deleteComment()} />);
             })}
           </>
         )}

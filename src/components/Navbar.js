@@ -16,66 +16,62 @@ function Navbar() {
           {/*    UPDATE     */}
           {isLoggedIn && (
             <>
-            <Dropdown>
+              <Dropdown>
                 <Dropdown.Toggle
                   id="dropdown-button-dark-example1"
-                  variant="secondary">
+                  variant="secondary"
+                >
                   Tools
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu variant="dark">
-                
                   <Dropdown.Item>
-                  <Link to="/tools">View tools on map</Link>
+                    <Link to="/tools">View tools on map</Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>
-                  <Link to="/my-tools">My tools</Link>
+                    <Link to="/my-tools">My tools</Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                  <Link to="/add-tool">Add a tool</Link>
+                    <Link to="/add-tool">Add a tool</Link>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <button onClick={logOutUser}>Logout</button>
-              <span>{user && user.name}</span>
+              <button className="btn btn-secondary" onClick={logOutUser}>
+                Logout
+              </button>
+              <button disabled className="btn btn-secondary">{user && user.name}</button>
             </>
           )}
 
           {!isLoggedIn && (
             <>
-            <Dropdown>
+              <Dropdown>
                 <Dropdown.Toggle
                   id="dropdown-button-dark-example1"
-                  variant="secondary">
+                  variant="secondary"
+                >
                   Tools
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu variant="dark">
-                
                   <Dropdown.Item>
-                  <Link to="/tools">View tools on map</Link>
+                    <Link to="/tools">View tools on map</Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>
-                  <Link to="/my-tools">My tools</Link>
+                    <Link to="/my-tools">My tools</Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                  <Link to="/add-tool">Add a tool</Link>
+                    <Link to="/add-tool">Add a tool</Link>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <Link to="/tools">
-                {" "}
-                <p className="nav-item">Tools</p>{" "}
-              </Link>
               <Link to="/signup">
-                {" "}
-                <p className="nav-item">Sign Up</p>{" "}
+                <button className="btn btn-secondary">Sign Up</button>
               </Link>
               <Link to="/login">
-                {" "}
-                <p className="nav-item">Login</p>{" "}
+                <button className="btn btn-secondary">Login</button>
               </Link>
             </>
           )}
