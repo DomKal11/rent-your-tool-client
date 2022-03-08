@@ -121,7 +121,7 @@ function AddTool(props) {
           <label>City:</label>
           <input
             type="text"
-            name="name"
+            name="city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />

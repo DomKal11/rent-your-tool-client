@@ -6,9 +6,6 @@ import Tools from "./pages/Tools";
 import ToolDetail from "./pages/ToolDetail";
 import MyTools from "./pages/MyTools";
 import AddTool from "./pages/AddTool";
-import ProjectListPage from "./pages/ProjectListPage";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
-import EditProjectPage from "./pages/EditProjectPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";  // <== IMPORT
@@ -43,22 +40,6 @@ function App() {
           element={ <IsPrivate> <MyTools /> </IsPrivate> } 
         />
 
-
-        <Route
-          path="/projects"
-          element={ <IsPrivate> <ProjectListPage /> </IsPrivate> } 
-        />
- 
-        <Route
-          path="/projects/:id"
-          element={ <IsPrivate> <ProjectDetailsPage /> </IsPrivate> }
-        />
- 
-        <Route
-          path="/projects/edit/:id"
-          element={ <IsPrivate> <EditProjectPage /> </IsPrivate> } 
-        />
-        
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
  
