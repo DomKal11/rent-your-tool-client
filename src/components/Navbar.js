@@ -40,7 +40,7 @@ function Navbar() {
               <button className="btn btn-secondary" onClick={logOutUser}>
                 Logout
               </button>
-              <button disabled className="btn btn-secondary">{user && user.name}</button>
+              <button disabled className="btn btn-secondary"><i>{user && user.name}</i></button>
             </>
           )}
 

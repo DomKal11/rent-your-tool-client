@@ -1,9 +1,11 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import Tools from "./pages/Tools";
 import ToolDetail from "./pages/ToolDetail";
+import ToolEdit from "./pages/ToolEdit";
 import MyTools from "./pages/MyTools";
 import AddTool from "./pages/AddTool";
 import SignupPage from "./pages/SignupPage";
@@ -31,6 +33,12 @@ function App() {
         />
 
         <Route
+          path="/tool/:id/edit"
+          element={ <IsPrivate> <ToolEdit /> </IsPrivate> } 
+        />
+
+
+        <Route
           path="/add-tool"
           element={ <IsPrivate> <AddTool /> </IsPrivate> } 
         />
@@ -42,8 +50,8 @@ function App() {
 
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
- 
       </Routes>
+      <Footer />
     </div>
   );
 }

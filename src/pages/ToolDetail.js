@@ -125,14 +125,24 @@ function ToolDetail(props) {
         // Reset the state
         setTool(response.data);
         setComments(response.data.comment);
-        let url = `/tool/${id}`;
-        navigate(url);
       })
       .catch((error) => console.log(error));
   };
 
-  const deleteComment = (e) => {
-     console.log(id);
+  const deleteComment = (commentId, toolId) => {
+     const storedToken = localStorage.getItem("authToken");
+
+    axios
+      .get(`${API_URL}/api/comment/${toolId}/${commentId}/delete`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        // Reset the state
+        console.log(response.data);
+        setTool(response.data);
+        setComments(response.data.comment);
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -165,21 +175,22 @@ function ToolDetail(props) {
             </div>
             <p>Price: {tool.price}€/day - Owner: {tool.owner.name}</p>
             <p className="tool-description">{tool.details}</p>
+            <br></br>
+            <br></br>
           </>
         )}
 
         {owner && (
           <>
-            <br></br>
-            <br></br>
 
             {tool.status === "available" && (
               <>
                 {tool.rentedby[0] && (
-                  <div id="reservation" name="reservation" class="reservation">
+                  <div id="reservation" name="reservation" className="reservation">
+                    <h2>New request:</h2>
                     <p>
-                      {tool.rentedby[0].name} want to borrow your tool! Contact
-                      him on {tool.rentedby[0].email} to agree on the details.
+                      <b>{tool.rentedby[0].name}</b> want to borrow your tool! Contact
+                      him/her on <b>{tool.rentedby[0].email}</b> to agree on the details.
                     </p>
                     <button
                       className="button-design btn-approve"
@@ -199,7 +210,7 @@ function ToolDetail(props) {
             )}
             {tool.status === "rented" && (
               <button
-                className="button-design"
+                className="button-design w-50 mx-auto"
                 onClick={(e) => toolAvailable(e)}
               >
                 Change status to: "available"
@@ -213,14 +224,13 @@ function ToolDetail(props) {
             {!owner && (
               <>
                 {tool.status === "available" && (
-                  <>
+                  <div class="reservation">
+                  <h2>Waiting requests:</h2>
                     <>
                       {tool.rentedby[0] && (
                         <>
-                        <br></br>
-                      <br></br>
                           <p>
-                            {tool.rentedby[0].name} already sent rent request.
+                            <b>{tool.rentedby[0].name}</b> already sent rent request.
                             Please wait until his requests are approved or
                             rejected.
                           </p>
@@ -247,7 +257,7 @@ function ToolDetail(props) {
                         <br></br>
                       </>
                     )}
-                  </>
+                  </div>
                 )}
               </>
             )}
@@ -280,7 +290,7 @@ function ToolDetail(props) {
         {comments && (
           <>
             {comments.map((comment, i) => {
-              return (<Comment key={i} {...comment} userId={user._id} delete={deleteComment()} />);
+              return (<Comment key={i} {...comment} userId={user._id} toolId={id} delete={deleteComment} />);
             })}
           </>
         )}

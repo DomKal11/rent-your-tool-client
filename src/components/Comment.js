@@ -1,6 +1,8 @@
 
 // We are deconstructing props object directly in the parentheses of the function
-function Comment({ i, author, text, rate, userId }) {
+function Comment(props) {
+ const {i, _id, author, text, rate, userId, toolId } = props;
+
   let owner=false;
   if(userId === author._id){owner=true;}
   let profilepic = `https://ui-avatars.com/api/?name=${author.name}&rounded=true&background=random&length=3&size=50`;
@@ -20,7 +22,7 @@ function Comment({ i, author, text, rate, userId }) {
       </div>
       </div>
       <div className="d-flex flex-column align-self-center rate-div"><span>⭐️</span><span>{rate}/5</span></div>
-      &nbsp;&nbsp;{owner && <button onClick="" className="button-design ml-1">🗑️</button>}
+      &nbsp;&nbsp;{owner && <button onClick={()=> props.delete(_id, toolId)} className="button-design ml-1">🗑️</button>}
     </div>
     </div>
   );
