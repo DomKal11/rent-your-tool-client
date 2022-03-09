@@ -7,7 +7,7 @@ import ReactStars from "react-rating-stars-component";
 import { useNavigate } from "react-router-dom";
 import Comment from "../components/Comment";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://rentyourtools.herokuapp.com/";
 
 function ToolDetail(props) {
   const { user } = useContext(AuthContext);
