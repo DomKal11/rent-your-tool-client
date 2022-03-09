@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import ToolCard from "../components/ToolCard";
 
-const API_URL = "https://rentyourtools.herokuapp.com/";
+const API_URL = "https://rentyourtools.herokuapp.com";
 
 const closeConfirmation = () => {
   document.getElementById('hidden-confirmation').style.cssText = 'display: none;';

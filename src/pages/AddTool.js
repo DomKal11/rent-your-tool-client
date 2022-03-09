@@ -4,7 +4,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "https://rentyourtools.herokuapp.com/";
+const API_URL = "https://rentyourtools.herokuapp.com";
 
 function AddTool(props) {
   const { user } = useContext(AuthContext);
