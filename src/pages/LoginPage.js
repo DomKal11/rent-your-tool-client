@@ -67,12 +67,17 @@ function LoginPage(props) {
                 onChange={handlePassword}
               />
 
-              <button type="submit" className="button-design">Login</button>
+              <button type="submit" className="button-design">
+                Login
+              </button>
             </form>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
 
             <p>Don't have an account yet?</p>
-            <Link to={"/signup"} className="link-light"> Sign Up</Link>
+            <Link to={"/signup"} className="link-light">
+              {" "}
+              Sign Up
+            </Link>
           </div>
         </div>
       </div>

@@ -6,10 +6,11 @@ import axios from "axios";
 
 const API_URL = "https://rentyourtools.herokuapp.com";
 
-function SignupPage(props) {
+function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
@@ -17,11 +18,12 @@ function SignupPage(props) {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
   const handleName = (e) => setName(e.target.value);
+  const handlePhone = (e) => setPhone(e.target.value);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     // Create an object representing the request body
-    const requestBody = { email, password, name };
+    const requestBody = { email, password, name, phone };
 
     // Make an axios request to the API
     // If POST request is successful redirect to login page
@@ -72,13 +74,27 @@ function SignupPage(props) {
                 onChange={handleName}
               />
 
-              <button type="submit" className="button-design">Sign Up</button>
+              <label>Phone number:</label>
+              <input
+                placeholder="+420xxxxxxxxx"
+                type="text"
+                name="phone"
+                value={phone}
+                onChange={handlePhone}
+              />
+
+              <button type="submit" className="button-design">
+                Sign Up
+              </button>
             </form>
 
             {errorMessage && <p className="error-message">{errorMessage}</p>}
 
             <p>Already have account?</p>
-            <Link to={"/login"} className="link-light"> Login</Link>
+            <Link to={"/login"} className="link-light">
+              {" "}
+              Login
+            </Link>
           </div>
         </div>
       </div>

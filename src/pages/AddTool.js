@@ -19,10 +19,8 @@ function AddTool(props) {
   const navigate = useNavigate();
   const location = [lat, lng];
 
-  // ******** this method handles the file upload ********
-  const handleFileUpload = (e) => {
-    // console.log("The file to be uploaded is: ", e.target.files[0]);
 
+  const handleFileUpload = (e) => {
     const uploadData = new FormData();
 
     // imageUrl => this name has to be the same as in the model since we pass
@@ -32,10 +30,8 @@ function AddTool(props) {
     axios
       .post(`${API_URL}/api/upload`, uploadData)
       .then((response) => {
-        console.log("response is: ", response);
         // response carries "fileUrl" which we can use to update the state
         setImageUrl(response.data.fileUrl);
-        console.log(response.data.fileUrl);
       })
       .catch((err) => console.log("Error while uploading the file: ", err));
   };
@@ -70,7 +66,7 @@ function AddTool(props) {
         setLat("");
         setLng("");
         setImageUrl("");
-        navigate("/tools/");
+        navigate("/tools");
       })
       .catch((error) => console.log(error));
   };
@@ -89,7 +85,7 @@ function AddTool(props) {
   };
 
   return (
-    <div className="container tool-box card">
+    <div className="container tool-box card fix-height">
       <div className="AddProject">
         <h3>Add new tool</h3>
 
@@ -121,18 +117,18 @@ function AddTool(props) {
             onChange={(e) => setDetails(e.target.value)}
           />
 
-      
-            <label>City:</label>
-            <input
-              className="form-control width-addtool"
-              type="text"
-              name="city"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            />
+          <label>City:</label>
+          <input
+            className="form-control width-addtool"
+            type="text"
+            name="city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
 
-            <p className="button-design" onClick={(e) => getGps()}>Get GPS</p>
-
+          <p className="button-design" onClick={(e) => getGps()}>
+            Get GPS
+          </p>
 
           <label>Lat:</label>
           <input

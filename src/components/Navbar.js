@@ -40,7 +40,11 @@ function Navbar() {
               <button className="btn btn-secondary" onClick={logOutUser}>
                 Logout
               </button>
-              <button disabled className="btn btn-secondary"><i>{user && user.name}</i></button>
+              <Link to="/edit-profile">
+                <button disabled className="btn btn-secondary">
+                  <i>{user && user.name}</i>
+                </button>
+              </Link>
             </>
           )}
 
