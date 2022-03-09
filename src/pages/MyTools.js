@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import ToolCard from "../components/ToolCard";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 const closeConfirmation = () => {
   document.getElementById('hidden-confirmation').style.cssText = 'display: none;';
@@ -52,7 +52,7 @@ function ProjectListPage() {
   };
 
   return (
-    <div className="container height-container">
+    <div className="container height-container tool-box card">
     <div id="hidden-confirmation">
     <div className="flex-column align-self-center">
     <div className="d-flex justify-content-center"><p>Do you really want delete this tool?</p><span id="close-x" onClick={()=> closeConfirmation()} className="x-close">X</span></div>

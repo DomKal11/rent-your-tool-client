@@ -12,7 +12,7 @@ import {
 } from "react-mapycz";
 import "../index.css";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 function Tools() {
   const [lat, setLat] = useState(50.0755);

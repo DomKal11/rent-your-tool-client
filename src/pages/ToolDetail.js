@@ -7,7 +7,7 @@ import ReactStars from "react-rating-stars-component";
 import { useNavigate } from "react-router-dom";
 import Comment from "../components/Comment";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 function ToolDetail(props) {
   const { user } = useContext(AuthContext);
@@ -224,11 +224,12 @@ function ToolDetail(props) {
             {!owner && (
               <>
                 {tool.status === "available" && (
-                  <div class="reservation">
-                  <h2>Waiting requests:</h2>
+                  <>
                     <>
                       {tool.rentedby[0] && (
                         <>
+                        <div class="reservation">
+                  <h2>Waiting requests:</h2>
                           <p>
                             <b>{tool.rentedby[0].name}</b> already sent rent request.
                             Please wait until his requests are approved or
@@ -239,6 +240,7 @@ function ToolDetail(props) {
                           </button>
                           <br></br>
                       <br></br>
+                      </div>
                         </>
                       )}
                     </>
@@ -257,7 +259,7 @@ function ToolDetail(props) {
                         <br></br>
                       </>
                     )}
-                  </div>
+                  </>
                 )}
               </>
             )}

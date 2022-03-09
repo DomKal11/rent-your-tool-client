@@ -4,7 +4,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 function AddTool(props) {
   const { user } = useContext(AuthContext);
@@ -68,7 +68,7 @@ function AddTool(props) {
         setCity("");
         setGps("");
         setLat("");
-        setLng("")
+        setLng("");
         setImageUrl("");
         navigate("/tools/");
       })
@@ -89,71 +89,92 @@ function AddTool(props) {
   };
 
   return (
-    <div className="AddProject">
-      <h3>Add new tool</h3>
+    <div className="container tool-box card">
+      <div className="AddProject">
+        <h3>Add new tool</h3>
 
-      <form onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <label>Price:</label>
-        <input
-          type="number"
-          name="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-
-        <label>Details:</label>
-        <textarea
-          type="text"
-          name="details"
-          value={details}
-          onChange={(e) => setDetails(e.target.value)}
-        />
-
-        <div>
-          <label>City:</label>
+        <form onSubmit={handleSubmit}>
+          <label>Name:</label>
           <input
+            className="form-control width-addtool"
             type="text"
-            name="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
-          <p onClick={(e) => getGps()}>Get GPS</p>
-        </div>
+          <label>Price - €/day:</label>
+          <input
+            className="form-control width-addtool"
+            type="number"
+            name="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
 
-        <label>Lat:</label>
-        <input
-          type="text"
-          name="latitude"
-          value={lat}
-          onChange={(e) => setLat(e.target.value)}
-        />
+          <label>Details:</label>
+          <textarea
+            className="form-control width-addtool"
+            type="text"
+            name="details"
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+          />
 
-        <label>Lng:</label>
-        <input
-          type="text"
-          name="longitude"
-          value={lng}
-          onChange={(e) => setLng(e.target.value)}
-        />
+      
+            <label>City:</label>
+            <input
+              className="form-control width-addtool"
+              type="text"
+              name="city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
 
-        <input type="file" onChange={(e) => handleFileUpload(e)} />
+            <p className="button-design" onClick={(e) => getGps()}>Get GPS</p>
 
-        {imageUrl !== "" && <button type="submit">Submit</button>}
-        {imageUrl === "" && (
-          <button disabled type="submit" title="Please fill in the form!">
-            Submit
-          </button>
-        )}
-      </form>
+
+          <label>Lat:</label>
+          <input
+            className="form-control width-addtool"
+            type="text"
+            name="latitude"
+            value={lat}
+            onChange={(e) => setLat(e.target.value)}
+          />
+
+          <label>Lng:</label>
+          <input
+            className="form-control width-addtool"
+            type="text"
+            name="longitude"
+            value={lng}
+            onChange={(e) => setLng(e.target.value)}
+          />
+
+          <input
+            className="form-control width-addtool"
+            type="file"
+            onChange={(e) => handleFileUpload(e)}
+          />
+
+          {imageUrl !== "" && (
+            <button type="submit" className="button-design">
+              Submit
+            </button>
+          )}
+          {imageUrl === "" && (
+            <button
+              disabled
+              className="button-design"
+              type="submit"
+              title="Please fill in the form!"
+            >
+              Submit
+            </button>
+          )}
+        </form>
+      </div>
     </div>
   );
 }

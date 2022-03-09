@@ -11,14 +11,14 @@ function ToolCard ( props ) {
     props.delete(_id);
   };  
   return (
-    <div className="card">
+    <div className="card card-special card-light">
     {rentedby[0]&& (<Link to={`/tool/${_id}#reservation`}><div className="notification">{rentedby[0].name} wants your tool!</div></Link>)}
-    <div className="card-img-container"><img className="card-img-top" src={imageUrl} alt={name}></img></div>
+    <Link to={`/tool/${_id}`}><div className="card-img-container"><img className="card-img-top" src={imageUrl} alt={name}></img></div></Link>
     <div className="card-body">
       <Link to={`/tool/${_id}`}>
         <h3>{name}</h3>
       </Link>
-      <p style={{ maxWidth: "400px" }}>{details} </p>
+      <p className="card-details">{details} </p>
       <div className="delete-div" onClick={()=> deleteDiv(_id)}><span>🗑️</span></div>
       </div>
     </div>

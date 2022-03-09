@@ -7,7 +7,7 @@ import ReactStars from "react-rating-stars-component";
 import { useNavigate } from "react-router-dom";
 import Comment from "../components/Comment";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 function ToolDetail(props) {
   const { user } = useContext(AuthContext);
@@ -70,7 +70,7 @@ function ToolDetail(props) {
         setCity("");
         setGps("");
         setLat("");
-        setLng("")
+        setLng("");
         let url = `/tool/${id}`;
         navigate(url);
       })
@@ -113,86 +113,103 @@ function ToolDetail(props) {
               </Link>
             </div>
             <div className="d-flex justify-content-center">
-            <form onSubmit={handleSubmit}>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>Name:</td>
-                    <td>
-                      <input
-                        className="form-control"
-                        type="text"
-                        name="name"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                      ></input>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Price: </td>
-                    <td>
-                      <input
-                        className="form-control"
-                        type="number"
-                        name="price"
-                        onChange={(e) => setPrice(e.target.value)}
-                        value={price}
-                      ></input>
-                      <span className="price-label">€/day</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Details:</td>
-                    <td>
-                      <textarea
-                        className="form-control"
-                        type="text"
-                        name="details"
-                        onChange={(e) => setDetails(e.target.value)}
-                        value={details}
-                      ></textarea>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>City:</td>
-                    <td>
-                      <input
-                        className="form-control"
-                        type="text"
-                        name="city"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                      />
-                    </td>
-                  </tr>
-                  <tr><td></td><td><span className="button-design" onClick={(e) => getGps()}>Get GPS</span></td></tr>
-                  <tr>
-                    <td>Lat:</td>
-                    <td>
-                      <input
-                      className="form-control"
-                        type="text"
-                        name="latitude"
-                        value={lat}
-                        onChange={(e) => setLat(e.target.value)}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Lng:</td>
-                    <td>
-                      <input
-                      className="form-control"
-                        type="text"
-                        name="longitude"
-                        value={lng}
-                        onChange={(e) => setLng(e.target.value)}
-                      />
-                    </td>
-                  </tr>
-                  <tr><td></td><td><button type="submit" className="button-design">Save changes</button></td></tr>
-                </tbody>
-              </table>
+              <form onSubmit={handleSubmit}>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Name:</td>
+                      <td>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="name"
+                          onChange={(e) => setName(e.target.value)}
+                          value={name}
+                        ></input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price: </td>
+                      <td>
+                        <input
+                          className="form-control"
+                          type="number"
+                          name="price"
+                          onChange={(e) => setPrice(e.target.value)}
+                          value={price}
+                        ></input>
+                        <span className="price-label">€/day</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Details:</td>
+                      <td>
+                        <textarea
+                          className="form-control"
+                          type="text"
+                          name="details"
+                          onChange={(e) => setDetails(e.target.value)}
+                          value={details}
+                        ></textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>City:</td>
+                      <td>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="city"
+                          value={city}
+                          onChange={(e) => setCity(e.target.value)}
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <span
+                          className="button-design"
+                          onClick={(e) => getGps()}
+                        >
+                          Get GPS
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Lat:</td>
+                      <td>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="latitude"
+                          value={lat}
+                          onChange={(e) => setLat(e.target.value)}
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Lng:</td>
+                      <td>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="longitude"
+                          value={lng}
+                          onChange={(e) => setLng(e.target.value)}
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <button type="submit" className="button-design">
+                          Save changes
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </form>
             </div>
           </>
