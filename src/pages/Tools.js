@@ -12,7 +12,7 @@ import {
 } from "react-mapycz";
 import "../index.css";
 
-const API_URL = "https://rentyourtools.netlify.app";
+const API_URL = "https://rentyourtools.herokuapp.com";
 
 function Tools() {
   const [fetching, setFetching] = useState(true);

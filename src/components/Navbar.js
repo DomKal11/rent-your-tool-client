@@ -10,7 +10,7 @@ function Navbar() {
       <div className="container">
         <Link to="/" className="navbar-left">
           <img src="/icon.png" alt="icon" className="icon"></img>
-          <p className="navbar-brand">Rent your tools</p>
+          <p className="navbar-brand">Rentify</p>
         </Link>
         <div className="navbar-right">
           {/*    UPDATE     */}

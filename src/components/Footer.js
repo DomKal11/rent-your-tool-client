@@ -18,7 +18,7 @@ function Footer() {
                             aria-hidden="true"
                           ></i>
                         </span>
-                        <b> Rent your tools</b>
+                        <b> Rentify</b>
                       </h5>
                     </li>
                     <li>
@@ -95,7 +95,7 @@ function Footer() {
             <div className="col-12">
               <div className="row my-4 row-1 no-gutters">
                 <div className="col-sm-3 col-auto text-center">
-                  <small>&#9400; Rent-your-tools</small>
+                  <small>&#9400; Rentify</small>
                 </div>
                 <div className="col-md-3 col-auto "></div>
                 <div className="col-md-3 col-auto"></div>

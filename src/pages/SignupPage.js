@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://rentyourtools.netlify.app";
+const API_URL = "https://rentyourtools.herokuapp.com";
 
 function SignupPage() {
   const [email, setEmail] = useState("");

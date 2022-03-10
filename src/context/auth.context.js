@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const API_URL = "https://rentyourtools.netlify.app";
+const API_URL = "https://rentyourtools.herokuapp.com";
 
 const AuthContext = React.createContext();
 

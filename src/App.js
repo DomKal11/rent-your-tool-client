@@ -13,10 +13,20 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate"; // <== IMPORT
 import IsAnon from "./components/IsAnon";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <div className="App">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Rentify</title>
+        <link rel="canonical" href="https://rentyourtools.netlify.app" />
+        <meta
+          name="description"
+          content="Netlify application - rent and borrow tools"
+        />
+      </Helmet>
       <Navbar />
 
       <Routes>
