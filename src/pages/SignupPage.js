@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
@@ -46,55 +46,57 @@ function SignupPage() {
         <source src="/videos/background.mp4" type="video/mp4" />
       </video>
       <h1 aria-label="Signup" className="text-nowrap login-title"></h1>
-      <div className="LoginPage">
-        <div className="title-menu container mx-auto">
-          <div className="row cards-title-menu">
-            <form onSubmit={handleSignupSubmit}>
-              <label>Email:</label>
-              <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleEmail}
-              />
+      <div className="fix-height">
+        <div className="LoginPage">
+          <div className="title-menu container mx-auto">
+            <div className="row cards-title-menu">
+              <form onSubmit={handleSignupSubmit}>
+                <label>Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmail}
+                />
 
-              <label>Password:</label>
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={handlePassword}
-              />
+                <label>Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePassword}
+                />
 
-              <label>Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleName}
-              />
+                <label>Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={handleName}
+                />
 
-              <label>Phone number:</label>
-              <input
-                placeholder="+420xxxxxxxxx"
-                type="text"
-                name="phone"
-                value={phone}
-                onChange={handlePhone}
-              />
+                <label>Phone number:</label>
+                <input
+                  placeholder="+420xxxxxxxxx"
+                  type="text"
+                  name="phone"
+                  value={phone}
+                  onChange={handlePhone}
+                />
 
-              <button type="submit" className="button-design">
-                Sign Up
-              </button>
-            </form>
+                <button type="submit" className="button-design">
+                  Sign Up
+                </button>
+              </form>
 
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-            <p>Already have account?</p>
-            <Link to={"/login"} className="link-light">
-              {" "}
-              Login
-            </Link>
+              <p>Already have account?</p>
+              <Link to={"/login"} className="link-light">
+                {" "}
+                Login
+              </Link>
+            </div>
           </div>
         </div>
       </div>

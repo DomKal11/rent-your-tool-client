@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import ToolCard from "../components/ToolCard";
 import { Link } from "react-router-dom";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 const closeConfirmation = () => {
   document.getElementById("hidden-confirmation").style.cssText =
@@ -43,7 +43,7 @@ function MyTools() {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${API_URL}/api/tool/${toolId}/delete`, {
+      .delete(`${API_URL}/api/tool/${toolId}/delete`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {

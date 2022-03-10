@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 function ToolDetail(props) {
   const [fetching, setFetching] = useState(true);
@@ -71,6 +71,8 @@ function ToolDetail(props) {
         setGps("");
         setLat("");
         setLng("");
+        let url=`/tool/${id}`;
+        navigate(url);
       })
       .catch((error) => console.log(error));
   };

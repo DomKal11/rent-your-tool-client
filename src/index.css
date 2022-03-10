@@ -117,11 +117,6 @@ textarea {
   border-radius: 3px;
 }
 
-.ProjectCard h3::before {
-  content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
-  margin-left: 5px;
-}
-
 .SignupPage,
 .LoginPage {
   background: #383838;
@@ -143,9 +138,6 @@ textarea {
   z-index: -1;
 }
 
-.EditProjectPage form,
-.AddTask form,
-.AddProject form,
 .SignupPage form,
 .LoginPage form {
   display: flex;
@@ -153,9 +145,10 @@ textarea {
   align-items: center;
 }
 
-.AddTask button,
-.AddProject button {
-  display: block;
+.navbar > .container{
+  border-left: 1px solid rgb(40, 45, 49);
+  border-right: 1px solid rgb(40, 45, 49);
+  border-radius:5px;
 }
 
 .TaskCard {

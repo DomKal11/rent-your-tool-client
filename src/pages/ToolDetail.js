@@ -7,7 +7,7 @@ import ReactStars from "react-rating-stars-component";
 import { useNavigate } from "react-router-dom";
 import Comment from "../components/Comment";
 
-const API_URL = "https://rentyourtools.herokuapp.com";
+const API_URL = "http://localhost:5005";
 
 function ToolDetail(props) {
   const [fetching, setFetching] = useState(true);
@@ -78,7 +78,7 @@ function ToolDetail(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/tool/${id}/rented`, {
+      .patch(`${API_URL}/api/tool/${id}/rented`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -89,12 +89,13 @@ function ToolDetail(props) {
       })
       .catch((error) => console.log(error));
   };
+
   const toolAvailable = (e) => {
     e.preventDefault();
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/tool/${id}/available`, {
+      .patch(`${API_URL}/api/tool/${id}/available`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -111,7 +112,7 @@ function ToolDetail(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/tool/${id}/${user._id}/rent`, {
+      .patch(`${API_URL}/api/tool/${id}/${user._id}/rent`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -126,7 +127,7 @@ function ToolDetail(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${API_URL}/api/comment/${toolId}/${commentId}/delete`, {
+      .delete(`${API_URL}/api/comment/${toolId}/${commentId}/delete`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -205,7 +206,7 @@ function ToolDetail(props) {
                       </button>
                       <button
                         className="button-design btn-decline"
-                        onClick={(e) => rentTool(e)}
+                        onClick={(e) => toolAvailable(e)}
                       >
                         Cancel {tool.rentedby[0].name} request
                       </button>
@@ -237,6 +238,24 @@ function ToolDetail(props) {
             <>
               {!owner && (
                 <>
+                  {tool.status === "rented" && (
+                    <>
+                      {tool.rentedby[0]._id === user._id && (
+                        <>
+                          <br></br>
+                          <p className="width-60">
+                            <b>You now have the {tool.name} on loan!</b>
+                          </p>
+                          <p className="width-60">
+                            Owner contact information: <b>{tool.owner.name}</b>{" "}
+                            / <b>{tool.owner.phone}</b>
+                          </p>
+                          <br></br>
+                          <br></br>
+                        </>
+                      )}
+                    </>
+                  )}
                   {tool.status === "available" && (
                     <>
                       <>

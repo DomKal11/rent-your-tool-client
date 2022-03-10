@@ -32,8 +32,8 @@ function Footer() {
                   <ul className="list-unstyled">
                     <li className="mt-0">Frontend repo</li>
                     <li>
-                      <Link
-                        to="https://github.com/DomKal11/rent-your-tool-client"
+                      <a
+                        href="https://github.com/DomKal11/rent-your-tool-client"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -43,7 +43,7 @@ function Footer() {
                           width="25"
                           alt="github1"
                         ></img>
-                      </Link>
+                      </a>
                     </li>
                     <li>&nbsp;</li>
                   </ul>
@@ -52,8 +52,8 @@ function Footer() {
                   <ul className="list-unstyled">
                     <li className="mt-0">Backend repo</li>
                     <li>
-                      <Link
-                        to="https://github.com/DomKal11/rent-your-tool"
+                      <a
+                        href="https://github.com/DomKal11/rent-your-tool"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -63,7 +63,7 @@ function Footer() {
                           width="25"
                           alt="github2"
                         ></img>
-                      </Link>
+                      </a>
                     </li>
                     <li>&nbsp;</li>
                   </ul>
@@ -72,8 +72,8 @@ function Footer() {
                   <ul className="list-unstyled">
                     <li className="mt-0">Heroku API:</li>
                     <li>
-                      <Link
-                        to="https://rentyourtools.herokuapp.com/api/"
+                      <a
+                        href="https://rentyourtools.herokuapp.com/api/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -83,7 +83,7 @@ function Footer() {
                           width="25"
                           alt="heroku"
                         ></img>
-                      </Link>
+                      </a>
                     </li>
                     <li>&nbsp;</li>
                   </ul>
