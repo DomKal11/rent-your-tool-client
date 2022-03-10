@@ -34,11 +34,10 @@ Anyone can borrow the advertised tools.
 <!-- WIREFRAMES -->
 ### Wirefrmaes 
 
-[Landing page](/public/images/wireframes/Wireframe_Landing.png?raw=true "Landing Page")
+[Landing page](https://ibb.co/SNyk2h0 "Landing Page")
 
-[Signup and Login](/public/images/wireframes/Wireframe_SignupLogin.png?raw=true "Signup and Login")
+[Tools map](https://ibb.co/7jfT8C8 "Tools map")
 
-[Game Library](/public/images/wireframes/Wireframe_GameLibrary.png?raw=true "Game Library")
 
 <!--USER STORIES-->
 ### User Stories
