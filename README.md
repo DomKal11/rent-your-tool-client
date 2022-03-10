@@ -34,9 +34,9 @@ Anyone can borrow the advertised tools.
 <!-- WIREFRAMES -->
 ### Wirefrmaes 
 
-[Landing page](https://ibb.co/SNyk2h0 "Landing Page")
+[Landing page](https://i.ibb.co/Jm1b0t0/wireframe1.png "Landing Page")
 
-[Tools map](https://ibb.co/7jfT8C8 "Tools map")
+[Tools map](https://i.ibb.co/mJTnmLt/wireframe2.png "Tools map")
 
 
 <!--USER STORIES-->
