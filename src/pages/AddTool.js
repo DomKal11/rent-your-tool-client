@@ -4,7 +4,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://rentyourtools.netlify.app";
 
 function AddTool(props) {
   const { user } = useContext(AuthContext);

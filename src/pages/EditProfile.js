@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://rentyourtools.netlify.app";
 
 function EditProfile() {
   const [fetching, setFetching] = useState(true);

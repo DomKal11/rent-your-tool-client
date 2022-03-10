@@ -12,7 +12,7 @@ import {
 } from "react-mapycz";
 import "../index.css";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://rentyourtools.netlify.app";
 
 function Tools() {
   const [fetching, setFetching] = useState(true);

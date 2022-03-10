@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import ToolCard from "../components/ToolCard";
 import { Link } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://rentyourtools.netlify.app";
 
 const closeConfirmation = () => {
   document.getElementById("hidden-confirmation").style.cssText =
