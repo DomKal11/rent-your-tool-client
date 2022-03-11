@@ -92,7 +92,7 @@ function AddTool(props) {
         <form onSubmit={handleSubmit}>
           <label>Name:</label>
           <input
-            className="form-control width-addtool"
+            className="form-control width-addtool mx-auto"
             type="text"
             name="name"
             value={name}
@@ -101,7 +101,7 @@ function AddTool(props) {
 
           <label>Price - €/day:</label>
           <input
-            className="form-control width-addtool"
+            className="form-control width-addtool mx-auto"
             type="number"
             name="price"
             value={price}
@@ -110,7 +110,7 @@ function AddTool(props) {
 
           <label>Details:</label>
           <textarea
-            className="form-control width-addtool"
+            className="form-control width-addtool mx-auto"
             type="text"
             name="details"
             value={details}
@@ -119,7 +119,7 @@ function AddTool(props) {
 
           <label>City:</label>
           <input
-            className="form-control width-addtool"
+            className="form-control width-addtool mx-auto"
             type="text"
             name="city"
             value={city}
@@ -132,7 +132,7 @@ function AddTool(props) {
 
           <label>Lat:</label>
           <input
-            className="form-control width-addtool"
+            className="form-control width-addtool mx-auto"
             type="text"
             name="latitude"
             value={lat}
@@ -141,7 +141,7 @@ function AddTool(props) {
 
           <label>Lng:</label>
           <input
-            className="form-control width-addtool"
+            className="form-control width-addtool mx-auto"
             type="text"
             name="longitude"
             value={lng}
@@ -149,7 +149,7 @@ function AddTool(props) {
           />
 
           <input
-            className="form-control width-addtool"
+            className="form-control width-addtool mx-auto"
             type="file"
             onChange={(e) => handleFileUpload(e)}
           />
