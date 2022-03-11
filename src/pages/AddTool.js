@@ -126,7 +126,7 @@ function AddTool(props) {
             onChange={(e) => setCity(e.target.value)}
           />
 
-          <p className="button-design" onClick={(e) => getGps()}>
+          <p className="button-design w-25 mx-auto" onClick={(e) => getGps()}>
             Get GPS
           </p>
 
