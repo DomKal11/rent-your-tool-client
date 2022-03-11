@@ -247,7 +247,7 @@ function ToolDetail(props) {
                             <b>You now have the {tool.name} on loan!</b>
                           </p>
                           <p className="width-60">
-                            Owner contact information: <b>{tool.owner.name}</b>{" "}
+                            Owner contact information: <b>{tool.owner.email}</b>{" "}
                             / <b>{tool.owner.phone}</b>
                           </p>
                           <br></br>
